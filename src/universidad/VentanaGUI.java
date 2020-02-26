@@ -1,12 +1,17 @@
 package universidad;
 
 import java.awt.EventQueue;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.Color;
 
 public class VentanaGUI {
 
@@ -18,7 +23,13 @@ public class VentanaGUI {
 	private JTextField textDireccion;
 	private JTextField textNacionalidad;
 	private JTextField textBuscar;
-
+	
+	//variables para la conexion a la base de datos
+	private Connection connection;
+	private final String dbname = "universidad", user = "cristian", pass = "am09069*";
+	private Statement st;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -47,6 +58,8 @@ public class VentanaGUI {
 	 */
 	private void initialize() {
 		frmModuloAlumnos = new JFrame();
+		frmModuloAlumnos.setBackground(new Color(70, 130, 180));
+		frmModuloAlumnos.getContentPane().setForeground(new Color(70, 130, 180));
 		frmModuloAlumnos.setTitle("MODULO ALUMNOS");
 		frmModuloAlumnos.setBounds(100, 100, 988, 586);
 		frmModuloAlumnos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -134,5 +147,30 @@ public class VentanaGUI {
 		JLabel lblResultado = new JLabel("Resultado");
 		lblResultado.setBounds(647, 242, 56, 16);
 		frmModuloAlumnos.getContentPane().add(lblResultado);
+	} //fin de la clase initialize
+	
+	
+	//metodo para crear la conexion a la base de datos
+	public void crearConexion() {
+		String url = "jdbc:mariadb://localhost:3306/";
+		String driver = "org.mariadb.jdbc.Driver";
+		
+		try {
+			Class.forName(driver).newInstance();
+			connection = DriverManager.getConnection(url + dbname, user, pass);
+			
+			if (!connection.isClosed()) {
+				System.out.println("La conexion con la DB se ha realizado con exito");
+			}
+			
+			st = connection.createStatement();
+			
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
+	
+	
 }
