@@ -11,13 +11,13 @@ import javax.swing.JTextArea;
 public class VentanaGUI {
 
 	private JFrame frmModuloAlumnos;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
+	private JTextField textMatricula;
+	private JTextField texNombre;
+	private JTextField textGrado;
+	private JTextField textTelefono;
+	private JTextField textDireccion;
+	private JTextField textNacionalidad;
+	private JTextField textBuscar;
 
 	/**
 	 * Launch the application.
@@ -52,87 +52,87 @@ public class VentanaGUI {
 		frmModuloAlumnos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmModuloAlumnos.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Matricula");
-		lblNewLabel.setBounds(79, 52, 56, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel);
+		JLabel lblMatricula = new JLabel("Matricula");
+		lblMatricula.setBounds(80, 65, 56, 16);
+		frmModuloAlumnos.getContentPane().add(lblMatricula);
 		
-		JLabel lblNewLabel_1 = new JLabel("Nombre");
-		lblNewLabel_1.setBounds(90, 113, 45, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_1);
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setBounds(91, 126, 45, 16);
+		frmModuloAlumnos.getContentPane().add(lblNombre);
 		
-		JLabel lblNewLabel_2 = new JLabel("Grado");
-		lblNewLabel_2.setBounds(95, 177, 40, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_2);
+		JLabel lblGrado = new JLabel("Grado");
+		lblGrado.setBounds(96, 190, 40, 16);
+		frmModuloAlumnos.getContentPane().add(lblGrado);
 		
-		JLabel lblNewLabel_3 = new JLabel("Telefono");
-		lblNewLabel_3.setBounds(79, 242, 56, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_3);
+		JLabel lbltelefono = new JLabel("Telefono");
+		lbltelefono.setBounds(80, 255, 56, 16);
+		frmModuloAlumnos.getContentPane().add(lbltelefono);
 		
-		JLabel lblNewLabel_4 = new JLabel("Direcccion");
-		lblNewLabel_4.setBounds(77, 307, 58, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_4);
+		JLabel lblDescripcion = new JLabel("Direcccion");
+		lblDescripcion.setBounds(78, 320, 58, 16);
+		frmModuloAlumnos.getContentPane().add(lblDescripcion);
 		
-		JLabel lblNewLabel_5 = new JLabel("Nacionalidad");
-		lblNewLabel_5.setBounds(63, 372, 72, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_5);
+		JLabel lblNacionalidad = new JLabel("Nacionalidad");
+		lblNacionalidad.setBounds(64, 385, 72, 16);
+		frmModuloAlumnos.getContentPane().add(lblNacionalidad);
 		
-		textField = new JTextField();
-		textField.setBounds(193, 49, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField);
-		textField.setColumns(10);
+		textMatricula = new JTextField();
+		textMatricula.setBounds(193, 49, 373, 32);
+		frmModuloAlumnos.getContentPane().add(textMatricula);
+		textMatricula.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(193, 110, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField_1);
+		texNombre = new JTextField();
+		texNombre.setColumns(10);
+		texNombre.setBounds(193, 110, 373, 32);
+		frmModuloAlumnos.getContentPane().add(texNombre);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(193, 174, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField_2);
+		textGrado = new JTextField();
+		textGrado.setColumns(10);
+		textGrado.setBounds(193, 174, 373, 32);
+		frmModuloAlumnos.getContentPane().add(textGrado);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(193, 239, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField_3);
+		textTelefono = new JTextField();
+		textTelefono.setColumns(10);
+		textTelefono.setBounds(193, 239, 373, 32);
+		frmModuloAlumnos.getContentPane().add(textTelefono);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(193, 304, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField_4);
+		textDireccion = new JTextField();
+		textDireccion.setColumns(10);
+		textDireccion.setBounds(193, 304, 373, 32);
+		frmModuloAlumnos.getContentPane().add(textDireccion);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(193, 369, 373, 22);
-		frmModuloAlumnos.getContentPane().add(textField_5);
+		textNacionalidad = new JTextField();
+		textNacionalidad.setColumns(10);
+		textNacionalidad.setBounds(193, 369, 373, 32);
+		frmModuloAlumnos.getContentPane().add(textNacionalidad);
 		
-		JButton btnNewButton = new JButton("GUARDAR");
-		btnNewButton.setBounds(255, 459, 97, 25);
-		frmModuloAlumnos.getContentPane().add(btnNewButton);
+		JButton btnGuardar = new JButton("GUARDAR");
+		btnGuardar.setBounds(255, 459, 97, 25);
+		frmModuloAlumnos.getContentPane().add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("ELIMINAR");
-		btnNewButton_1.setBounds(436, 459, 97, 25);
-		frmModuloAlumnos.getContentPane().add(btnNewButton_1);
+		JButton btnEliminar = new JButton("ELIMINAR");
+		btnEliminar.setBounds(436, 459, 97, 25);
+		frmModuloAlumnos.getContentPane().add(btnEliminar);
 		
-		JLabel lblNewLabel_6 = new JLabel("Buscar");
-		lblNewLabel_6.setBounds(647, 113, 56, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_6);
+		JLabel lblBuscar = new JLabel("Buscar por matricula");
+		lblBuscar.setBounds(606, 108, 127, 16);
+		frmModuloAlumnos.getContentPane().add(lblBuscar);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(702, 110, 183, 22);
-		frmModuloAlumnos.getContentPane().add(textField_6);
-		textField_6.setColumns(10);
+		textBuscar = new JTextField();
+		textBuscar.setBounds(734, 100, 183, 32);
+		frmModuloAlumnos.getContentPane().add(textBuscar);
+		textBuscar.setColumns(10);
 		
-		JButton btnNewButton_2 = new JButton("BUSCAR");
-		btnNewButton_2.setBounds(750, 145, 97, 25);
-		frmModuloAlumnos.getContentPane().add(btnNewButton_2);
+		JButton btnBuscar = new JButton("BUSCAR");
+		btnBuscar.setBounds(782, 145, 97, 25);
+		frmModuloAlumnos.getContentPane().add(btnBuscar);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(647, 266, 285, 71);
-		frmModuloAlumnos.getContentPane().add(textArea);
+		JTextArea textAreaResultado = new JTextArea();
+		textAreaResultado.setBounds(647, 266, 285, 71);
+		frmModuloAlumnos.getContentPane().add(textAreaResultado);
 		
-		JLabel lblNewLabel_7 = new JLabel("Resultado");
-		lblNewLabel_7.setBounds(647, 242, 56, 16);
-		frmModuloAlumnos.getContentPane().add(lblNewLabel_7);
+		JLabel lblResultado = new JLabel("Resultado");
+		lblResultado.setBounds(647, 242, 56, 16);
+		frmModuloAlumnos.getContentPane().add(lblResultado);
 	}
 }
