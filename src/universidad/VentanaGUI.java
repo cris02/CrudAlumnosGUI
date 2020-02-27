@@ -3,6 +3,7 @@ package universidad;
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -181,6 +182,26 @@ public class VentanaGUI {
 				try {
 					st.executeUpdate(" DELETE FROM alumnos WHERE matricula = '" + id + "' " );
 					JOptionPane.showMessageDialog(null, "Se ha Eliminado el registro Correctamente!!");
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		//accion para buscar registros en la base de datos
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textBuscar.getText());
+				
+				try {
+					ResultSet resultSet = st.executeQuery("SELECT nombre FROM alumnos WHERE matricula = '" + id + "' ");
+					
+					if (resultSet.next() == true) {
+						textAreaResultado.setText(resultSet.getString("nombre"));
+						JOptionPane.showMessageDialog(null, "Busqueda exitosa!!");
+					} else
+						JOptionPane.showMessageDialog(null, "No se ha encontrado el registro!!");
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
