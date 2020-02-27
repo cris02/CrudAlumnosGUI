@@ -93,7 +93,6 @@ public class VentanaGUI {
 		frmModuloAlumnos.getContentPane().add(lblNacionalidad);
 
 		textMatricula = new JTextField();
-		textMatricula.setEditable(false);
 		textMatricula.setBounds(193, 49, 373, 32);
 		frmModuloAlumnos.getContentPane().add(textMatricula);
 		textMatricula.setColumns(10);
@@ -149,7 +148,7 @@ public class VentanaGUI {
 		frmModuloAlumnos.getContentPane().add(textAreaResultado);
 
 		JLabel lblResultado = new JLabel("Resultado");
-		lblResultado.setBounds(647, 242, 56, 16);
+		lblResultado.setBounds(647, 242, 86, 16);
 		frmModuloAlumnos.getContentPane().add(lblResultado);
 
 		//accion para guardar registros en la base datos
@@ -171,6 +170,21 @@ public class VentanaGUI {
 					e1.printStackTrace();
 				}
 				
+			}
+		});
+		
+		//accion para eliminar registros en la base de datos
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textMatricula.getText());
+				
+				try {
+					st.executeUpdate(" DELETE FROM alumnos WHERE matricula = '" + id + "' " );
+					JOptionPane.showMessageDialog(null, "Se ha Eliminado el registro Correctamente!!");
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 
